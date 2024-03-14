@@ -1,0 +1,44 @@
+1. GET Interns
+Method: GET
+URL: http://127.0.0.1:5000/interns
+Body: Not needed for GET requests.
+2. GET Intern by ID
+Method: GET
+URL: http://127.0.0.1:5000/interns/<intern_id>, replace <intern_id> with an actual ID.
+Body: Not needed for GET requests.
+3. POST Intern
+Method: POST
+URL: http://127.0.0.1:5000/interns
+Body:
+Select raw and JSON from the dropdown menu.
+Enter the intern's details in JSON format, for example:
+{
+  "intern_name": "John Doe",
+  "intern_doj": "2023-01-01",
+  "intern_signum": "123456"
+}
+4. PUT Intern
+Method: PUT
+URL: http://127.0.0.1:5000/interns/<intern_id>, replace <intern_id> with the ID of the intern you want to update.
+Body:
+Select raw and JSON from the dropdown menu.
+Enter the updated intern's details in JSON format, for example:
+{
+  "intern_name": "Jane Doe",
+  "intern_doj": "2023-02-01",
+  "intern_signum": "654321"
+}
+5. DELETE Intern
+Method: DELETE
+URL: http://127.0.0.1:5000/interns/<intern_id>, replace <intern_id> with the ID of the intern you want to delete.
+Body: Not needed for DELETE requests.
+Steps to Test in Postman:
+Open Postman: Start Postman on your computer.
+Create a New Request: Click on the "New" button and select "Request" to create a new request.
+Enter Request Details:
+For GET requests, simply enter the URL and select the GET method.
+For POST and PUT requests, select the appropriate method, enter the URL, and then click on the "Body" tab to enter the JSON data.
+For DELETE requests, select the DELETE method and enter the URL.
+Send the Request: Click on the "Send" button to send the request to your Flask application.
+View the Response: The response from your Flask application will be displayed in the lower section of the Postman window.
+Remember to replace 127.0.0.1:5000 with your actual server address if it's different, and ensure your Flask application is running before sending requests.

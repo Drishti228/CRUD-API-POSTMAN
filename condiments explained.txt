@@ -1,0 +1,37 @@
+Sure, let's break down your code and explain its components, relationships, functions, and variables:
+
+1. **app.py**:
+   - This is the main Python script that defines your Flask application.
+   - It imports necessary modules like Flask, SQLAlchemy, and datetime.
+   - Defines the Flask application instance.
+   - Configures the SQLAlchemy database connection to a SQLite database named 'details.db'.
+   - Defines a SQLAlchemy model called `Details` which represents the structure of your database table.
+   - Defines routes (`index`, `delete`, `update`) that handle HTTP requests and responses.
+   - `index` route handles both GET and POST requests. GET request renders the `index.html` template with details from the database. POST request adds new details to the database.
+   - `delete` route deletes details from the database based on the provided ID.
+   - `update` route updates details in the database based on the provided ID.
+
+2. **index.html**:
+   - This is an HTML template for rendering the main page of your web application.
+   - Extends the `base.html` template.
+   - Displays a table of intern details fetched from the database.
+   - Provides forms to add new intern details.
+   - Provides links to delete or update existing intern details.
+
+3. **update.html**:
+   - This is an HTML template for rendering the update page of your web application.
+   - Extends the `base.html` template.
+   - Provides a form to update existing intern details.
+
+4. **base.html**:
+   - This is the base HTML template that other templates (`index.html` and `update.html`) extend.
+   - Defines the basic structure of an HTML page.
+   - Imports a CSS file named `main.css`.
+   - Includes blocks where child templates can inject their specific content (`head` and `body`).
+
+5. **main.css**:
+   - This is a CSS file defining styles for your web application.
+   - Styles the layout, fonts, and appearance of HTML elements.
+   - It defines styles for the `body` and `.content` classes used in the HTML templates.
+
+The relationship between these files is that `app.py` defines the backend logic of your web application using Flask and SQLAlchemy, while the HTML templates (`index.html` and `update.html`) define the structure and content of the frontend that users interact with. `base.html` acts as a template that provides a common structure shared by other HTML files. Finally, `main.css` styles the HTML elements to improve the visual presentation of your web application.

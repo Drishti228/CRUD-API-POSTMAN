@@ -1,0 +1,27 @@
+                                             [Start]
+                                               |
+                       [Connect to MySQL Database] (ConnCRUDpymysql.py)
+                                               |
+                           /          |            \
+[Start Flask App] (AppPymysql.py) [Create Table] (ConnCRUDpymysql.py) [Handle HTTP Request] (AppPymysql.py)
+      |                             |                             |
+[Flask app starts]           /            \                  [app.route()] (AppPymysql.py)
+      |               [Check interns table]                      |
+      |                        |                               [Handle HTTP methods]
+      |             [HTTP GET]  |  [HTTP POST/PUT/DELETE]      |
+      |                        |                               |   
+      |                 --------------                ---------------
+      |                |             |                |             |
+      |           [Read Interns]   |                |   [Create Intern] [Read Intern] [Update Intern] [Delete Intern] [Close Connection] (ConnCRUDpymysql.py)
+      |                |             |                |             |
+      |                --------------                 ---------------
+      |                           |                        |
+      |                   [Return JSON]     [Return Result/Error]
+      |                           |                        |
+      |                   [End Response]          [End Response]
+      |                           |                        |
+      -----------------------------               -------------------
+                                                    |
+                                         [Close database connection]
+                                                    |
+                                                [Program ends]
